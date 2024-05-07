@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testing.org/testng1.0.dtd">
+<suite name="TestSuite" verbose="1">
+    <test name="regression">
+        <groups>
+            <run>
+                <include name="regression" />
+                <exclude name="sanity" />
+            </run>
+        </groups>
+        <classes>
+            <class name = "com.AssignmentPractice.ActiProjectTestCaseng"/>
+        </classes>
+    </test>
+</suite>
