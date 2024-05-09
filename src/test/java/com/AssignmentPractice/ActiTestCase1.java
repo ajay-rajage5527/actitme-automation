@@ -51,6 +51,8 @@ public class ActiTestCase1 extends BaseClass {
         else{
             throw new Exception ("status not changed as planning");
         }
+        System.out.println("Ajay");
+
     }
     @AfterClass
     public void tearDown(){
