@@ -24,7 +24,7 @@ public class ActiTestCase1 extends BaseClass {
         driver.get("https://online.actitime.com/oncospark1");
         driver.manage().window().maximize();
         Thread.sleep(5000);
-        System.out.println("Hello");
+        System.out.println("Hello ");
     }
     @BeforeMethod
     public void beforeMethod(){
