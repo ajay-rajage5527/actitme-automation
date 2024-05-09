@@ -4,31 +4,45 @@ import com.actitime.automation.pages.LoginPages;
 import com.actitime.automation.pages.TaskPages;
 import common.BaseClass;
 import common.CommonFunctions;
+import common.PropertyHandling;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ActiTestCase1 extends BaseClass {
+import java.io.IOException;
+
+public class ActitimeChangeStatusPropertyHandling extends BaseClass {
     WebDriver driver;
     CommonFunctions commonFunctions;
     LoginPages loginPages;
     TaskPages taskPage;
+    PropertyHandling propertyHandling;
     @BeforeClass
-    public void browserSetup() throws InterruptedException {
-         commonFunctions=new CommonFunctions(driver);
+    public void browserSetup() throws InterruptedException, IOException {
+        /* commonFunctions=new CommonFunctions(driver);
         driver =launchBrowser("chrome");
         driver.get("https://online.actitime.com/oncospark1");
         driver.manage().window().maximize();
-        Thread.sleep(5000);
-        System.out.println("Hello");
+        Thread.sleep(5000);*/
+        propertyHandling=new PropertyHandling("config.properties");
+        String browser=propertyHandling.getProperty("browser");
+        String url=propertyHandling.getProperty("url");
+        driver=launchBrowser(browser);
+        driver.get(url);
+        taskPage=new TaskPages(driver);
+        commonFunctions=new CommonFunctions(driver);
+
     }
     @BeforeMethod
     public void beforeMethod(){
-        loginPages.login("rajagea3483@gmail.com","Ajay5527");
+       // loginPages.login("rajagea3483@gmail.com","Ajay5527");
+       String username= propertyHandling.getProperty("username");
+       String password=propertyHandling.getProperty("password");
+       loginPages.login(username,password);
+
         }
     @Test
     public void ChangeTaskStatus() throws Exception {
