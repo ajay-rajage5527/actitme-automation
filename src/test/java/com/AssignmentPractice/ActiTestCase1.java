@@ -46,6 +46,7 @@ public class ActiTestCase1 extends BaseClass {
         driver.findElement(By.xpath("//span[text()='Apply']")).click();
         String planningStatus =driver.findElement(By.xpath("(//div[text()='Planning'])[1]")).getText();
         String str="Planning";
+        System.out.println("hello ,I am Ajay");
         if(planningStatus.equals(str)){
             System.out.println("status changed as planning");
         }
