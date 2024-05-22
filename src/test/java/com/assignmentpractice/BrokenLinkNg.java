@@ -1,4 +1,4 @@
-package com.AssignmentPractice;
+package com.assignmentpractice;
 
 import common.BaseClass;
 import common.CommonFunctions;
@@ -6,16 +6,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Base64;
 import java.util.List;
 
 public class BrokenLinkNg  extends BaseClass {

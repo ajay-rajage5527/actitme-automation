@@ -1,4 +1,4 @@
-package com.AssignmentPractice;
+package com.assignmentpractice;
 
 import com.actitime.automation.pages.TaskPages;
 import com.orangehrm.automation.LoginPage;
@@ -8,7 +8,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

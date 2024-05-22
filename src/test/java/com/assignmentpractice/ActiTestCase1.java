@@ -1,4 +1,4 @@
-package com.AssignmentPractice;
+package com.assignmentpractice;
 
 import com.actitime.automation.pages.LoginPages;
 import com.actitime.automation.pages.TaskPages;
@@ -6,7 +6,6 @@ import common.BaseClass;
 import common.CommonFunctions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -19,9 +18,11 @@ public class ActiTestCase1 extends BaseClass {
     TaskPages taskPage;
     @BeforeClass
     public void browserSetup() throws InterruptedException {
-         commonFunctions=new CommonFunctions(driver);
         driver =launchBrowser("chrome");
+         commonFunctions=new CommonFunctions(driver);
+         loginPages=new LoginPages(driver);
         driver.get("https://online.actitime.com/oncospark1");
+         taskPage=new TaskPages(driver);
         driver.manage().window().maximize();
         Thread.sleep(5000);
     }
@@ -31,14 +32,16 @@ public class ActiTestCase1 extends BaseClass {
         }
     @Test
     public void ChangeTaskStatus() throws Exception {
-        commonFunctions.waitForElementClickable(driver.findElement(taskPage.taskModule));
+        Thread.sleep(5000);
         commonFunctions.click(taskPage.taskModule);
-        commonFunctions.click(taskPage.filghtOperation);
-    Thread.sleep(3000);
+        Thread.sleep(3000);
+        //commonFunctions.click(taskPage.filghtOperation);
+        commonFunctions.click(By.xpath("//div[text()='Flight operation'])[1]"));
+        //driver.findElement(By.xpath("//div[text()='Flight operation'])[1]"));
         driver.findElement(By.xpath("//tr[@class='taskRow noLastTrackingDate']/descendant::div[2]")).click();
-        Thread.sleep(3000);
+
         driver.findElement(By.xpath("//div[text()='Change Status']")).click();
-        Thread.sleep(3000);
+
         driver.findElement(By.xpath("//div[text()='New Status:']/following::div[7]")).click();
         driver.findElement(By.xpath("//div[text()='New Status:']/following::div[contains(text(),'Planning')]")).click();
         Thread.sleep(3000);
@@ -51,7 +54,7 @@ public class ActiTestCase1 extends BaseClass {
         else{
             throw new Exception ("status not changed as planning");
         }
-        System.out.println("Ajay");
+        System.out.println("Ajay1");
 
     }
     @AfterClass

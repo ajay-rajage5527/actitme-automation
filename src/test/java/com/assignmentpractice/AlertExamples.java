@@ -1,8 +1,7 @@
-package com.AssignmentPractice;
+package com.assignmentpractice;
 
 import com.actitime.automation.pages.LoginPages;
 import com.actitime.automation.pages.TaskPages;
-import com.orangehrm.automation.LoginPage;
 import common.BaseClass;
 import common.CommonFunctions;
 import org.openqa.selenium.By;

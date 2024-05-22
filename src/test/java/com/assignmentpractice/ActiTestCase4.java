@@ -1,14 +1,11 @@
-package com.AssignmentPractice;
+package com.assignmentpractice;
 
 import com.actitime.automation.pages.LoginPages;
 import com.actitime.automation.pages.TaskPages;
-import com.orangehrm.automation.LoginPage;
 import common.BaseClass;
 import common.CommonFunctions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;

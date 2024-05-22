@@ -27,10 +27,12 @@ public class ActiTimeFilterOperationng  extends BaseClass {
          taskPages=new TaskPages(driver);
          driver = launchBrowser("chrome");
         driver.get("https://online.actitime.com/oncospark1");
-
+        loginPages.login("rajagea3483@gmail.com","Ajay5527");
+        Thread.sleep(5000);
     }
     @Test
     public void filterTasks() throws Exception {
+
         commonFunctions.waitForElementClickable(driver.findElement(taskPages.taskModule));
         commonFunctions.click(driver.findElement(taskPages.taskModule));
 

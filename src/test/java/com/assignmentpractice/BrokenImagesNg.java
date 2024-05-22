@@ -1,11 +1,10 @@
-package com.AssignmentPractice;
+package com.assignmentpractice;
 
 import common.BaseClass;
 import common.CommonFunctions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.v85.backgroundservice.BackgroundService;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;

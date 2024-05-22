@@ -1,4 +1,4 @@
-    package com.AssignmentPractice;
+    package com.assignmentpractice;
     
     import org.testng.annotations.DataProvider;
     import org.testng.annotations.Test;

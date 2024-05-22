@@ -6,12 +6,13 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
     WebDriver driver;
-
+    CommonFunctions commonFunctions;
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
-    public void login(String username, String password) {
-        CommonFunctions commonFunctions=new CommonFunctions(driver);
+    public void login(String username, String password) throws InterruptedException {
+         commonFunctions=new CommonFunctions(driver);
+         Thread.sleep(10000);
         commonFunctions.waitForElementToPresent(driver,driver.findElement(By.name("username")));
         driver.findElement(By.name("username")).sendKeys(username);
         commonFunctions.waitForElementToPresent(driver,driver.findElement(By.name("password")));

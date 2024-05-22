@@ -13,6 +13,7 @@ public class CommonFunctions{
     WebDriver driver;
 
     public CommonFunctions(WebDriver driver) {
+
         this.driver=driver;
     }
 
@@ -31,6 +32,10 @@ public class CommonFunctions{
                WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(20));
                wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+    public void waitForElementClickable(By by){
+        WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.elementToBeClickable(by));
+    }
     public void presenceOFElementLocated(By element){
         WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(20));
         wait.until(ExpectedConditions.presenceOfElementLocated(element));
@@ -43,7 +48,7 @@ public class CommonFunctions{
     public void fluentWait(By by){
         Wait<WebDriver> fluentWait=new FluentWait<>(driver)
             .pollingEvery(Duration.ofSeconds(2))
-                .withTimeout(Duration.ofSeconds(15))
+                .withTimeout(Duration.ofSeconds(20))
                 .ignoring(Exception.class);
         Function<WebDriver,WebElement> function= (var) ->{
             System.out.println("Wait until element is available");
@@ -59,4 +64,6 @@ public class CommonFunctions{
         fluentWait(by);
         driver.findElement(by).click();
     }
+
+
 }

@@ -1,4 +1,4 @@
-package com.AssignmentPractice;
+package com.assignmentpractice;
 
 import com.actitime.automation.pages.LoginPages;
 import com.actitime.automation.pages.TaskPages;
